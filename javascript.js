@@ -1,7 +1,7 @@
-// Hamburger menu animation toggle
-const menuBtn = document.querySelector('.menu');
-if (menuBtn) {
-  menuBtn.addEventListener('click', function() {
-    menuBtn.classList.toggle('active');
-  });
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const button = this.querySelector(".menu");
+
+  button.addEventListener("click", function (){
+    
+  })
+})
