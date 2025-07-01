@@ -1,3 +1,11 @@
+.menu-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-left: 10px;
+}
+
 .menu {
   z-index: 2;
   position: relative;
@@ -8,15 +16,46 @@
   height: 40px;
   width: 80px;
   margin-top: 15px;
-  margin-left: 20px;
-  background-color: rgba(0, 0, 0, 0.651);
-  border: 0;
-  transition: transform 0.3s ease;
+  background-color: #525252;
+  border: rgb(255, 228, 196) solid 1px;
+  transition: margin-left 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
+  box-shadow: 10px 6px 0 rgba(0, 0, 0, 0.26);
 }
 
 .menu:hover {
   cursor: pointer;
   transform: scale(1.1);
+  box-shadow: 12px 8px 10px rgba(0, 0, 0, 0.26);
+  z-index: 3;
+}
+
+.menu.active:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 12px 8px 10px rgba(255, 228, 196, 0.26);
+  z-index: 3;
+}
+
+.link-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+
+.linkedin,
+.github {
+  height: 40px;
+  width: 60px;
+  color: rgb(255, 228, 196);
+  font-size: 20px;
+}
+
+.link-menu.active {
+  height: 40px !important;
+  width: 60px !important;
+  color: rgb(14, 12, 10) !important;
+  font-size: 20px;
+  margin-left: 0px !important;
 }
 
 body {
@@ -49,20 +88,89 @@ body {
   opacity: 1;
 }
 
+.menu.active {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 80px;
+  margin-top: 15px;
+  margin-left: 45px;
+  background-color: rgb(255, 228, 196);
+  border: rgba(0, 0, 0, 0.596) solid 1px;
+  transition: margin-left 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 10px 6px 0 rgba(255, 228, 196, 0.568);
+}
+
+.line.active {
+  background-color: rgba(0, 0, 0, 0.596);
+}
+
 .menu-button {
-  display: grid;
-  cursor: pointer;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px;
-  width: max-content;
-  padding: 20px;
-  /* Location */
-  right: 50%;
-  /* Design */
+  position: relative;
+  text-align: left;
+  width: 100vw;
   color: rgb(255, 228, 196);
   background-color: rgba(245, 222, 179, 0);
   border: 0;
   font-family: "Press Start 2P", monospace;
-  font-size: 16px;
+  font-size: 35px;
   color: #f5d0a5;
+}
+
+.menu-button:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #f5d0a5;
+  transition: width 0.3s ease;
+}
+
+.menu-button:hover:after {
+  width: 100vw;
+}
+
+.overlay-buttons {
+  position: absolute;
+  display: grid;
+  justify-items: start;
+  margin-top: 70px;
+  left: -40px;
+  gap: 13px;
+  transition: margin-left 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.overlay-buttons.active {
+  display: grid;
+  justify-items: start;
+  transition: margin-left 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 70px;
+  margin-left: 100px;
+  gap: 13px;
+  transition: margin-left 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.home {
+  cursor: pointer;
+}
+
+.about {
+  cursor: pointer;
+}
+
+.projects {
+  cursor: pointer;
+}
+
+.contact {
+  cursor: pointer;
 }

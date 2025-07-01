@@ -1,12 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const button = this.querySelector(".menu");
+  const menu = this.querySelector(".menu");
   const overlay = this.querySelector(".overlay");
-
-  button.addEventListener("click", function() {
+  const line = this.querySelectorAll(".line");
+  const overlayButtons = this.querySelector(".overlay-buttons");
+  const linkMenu = this.querySelectorAll(".link-menu");
+  menu.addEventListener("click", function () {
     overlay.classList.toggle("active");
+    menu.classList.toggle("active");
+    overlayButtons.classList.toggle("active");
+    line.forEach(function (l) {
+      l.classList.toggle("active");
+    });
 
-  
+    linkMenu.forEach(function (r) {
+      r.classList.toggle("active");
+    });
   });
-  
-
-  });
+});

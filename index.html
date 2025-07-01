@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <title>Ognjen Ristic</title>
   </head>
@@ -16,17 +20,29 @@
   <body>
     <script src="javascript.js"></script>
     <!-- Hamburger menu button -->
-    <button class="menu">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </button>
+    <div class="menu-row">
+      <button class="menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </button>
+      <div class="link-group">
+        <button class="linkedin menu link-menu">
+          <i class="fab fa-linkedin-in"></i>
+        </button>
+        <button class="github menu link-menu">
+          <i class="fab fa-github"></i>
+        </button>
+      </div>
+    </div>
 
     <div class="overlay">
-      <button class="menu-button home">Home</button>
-      <button class="menu-button about">About</button>
-      <button class="menu-button projects">Projects</button>
-      <button class="menu-button contact">Contact</button>
+      <div class="overlay-buttons">
+        <button class="menu-button home">Home</button>
+        <button class="menu-button about">About</button>
+        <button class="menu-button projects">Projects</button>
+        <button class="menu-button contact">Contact</button>
+      </div>
     </div>
   </body>
 </html>
