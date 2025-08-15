@@ -208,7 +208,7 @@ width: 50px;
 justify-content: center;
 align-items: center;
 margin: auto;
-margin-top: 110px;
+margin-top: 40px;
 transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -239,9 +239,11 @@ transform: translateY(30px);
 
 .divider {
   position: relative;
+  justify-content: center;
   border-top: 5px dotted #525252;
   height: 10px;
-  width: 800px;
+  margin: 60px auto 0 auto;
+  width: 500px;
   height: 0;
   
 }
