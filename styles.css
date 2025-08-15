@@ -1,5 +1,7 @@
 .menu-row {
+  position: fixed;
   display: flex;
+  z-index: 25;
   flex-direction: row;
   align-items: center;
   gap: 20px;
@@ -59,11 +61,22 @@
 }
 
 body {
-  background-color: rgb(255, 228, 196);
+  background-color:#ffe4c4  ;
+  user-select: none;
+}
+
+body > :not(header):not(footer) {
+  margin: 0 300px;
+  
+}
+/* $Check if it works */
+body > :not(.projects .VD .logo) {
+  user-select: none;
+  
 }
 
 .line {
-  background-color: rgb(255, 228, 196);
+  background-color:#ffe4c4;
   width: 20px;
   height: 3px;
   margin: 2.5px;
@@ -71,13 +84,13 @@ body {
 }
 
 .overlay {
-  z-index: 1;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 0;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.596);
+  background: #525252;
   transition: width 0.7s ease-out, opacity 0.7s ease-out;
   overflow: hidden;
   opacity: 0;
@@ -138,10 +151,11 @@ body {
 }
 
 .overlay-buttons {
+  user-select: none;
   position: absolute;
   display: grid;
   justify-items: start;
-  margin-top: 70px;
+  top: 90px;
   left: -40px;
   gap: 13px;
   transition: margin-left 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease,
@@ -152,6 +166,7 @@ body {
   display: grid;
   justify-items: start;
   transition: margin-left 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  top: 20px;
   margin: 70px;
   margin-left: 100px;
   gap: 13px;
@@ -160,17 +175,202 @@ body {
 }
 
 .home {
-  cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-.about {
-  cursor: pointer;
+.home img {
+  user-select: none;
+
+width:400px;
+height: auto;
+display: block;
+}
+
+.about  {
+  /* text  */
+  user-select: none;
+  color: #525252;
+  font-family: "Press Start 2P", monospace;
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.8;
+  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.599) ;
+
+}
+
+
+
+.scroll-arrow {
+display: flex;
+width: 50px;
+justify-content: center;
+align-items: center;
+margin: auto;
+margin-top: 110px;
+transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-arrow.scrolled {
+display: flex;
+width: 50px;
+opacity: 0;
+transform: translateY(30px);
 }
 
 .projects {
+  text-align: center;
+}
+
+/* $ maybe change this */
+.projects h1 {          
+  display: inline-block;        
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 40px;
+  text-align: center;
+  color: #f5d0a5;
+  background-color: #525252;
+  padding: 10px;
+  padding-left: 20px; padding-right: 20px;
+}
+
+.divider {
+  position: relative;
+  border-top: 5px dotted #525252;
+  height: 10px;
+  width: 800px;
+  height: 0;
+  
+}
+
+.projects h2 {
+  display: inline-block;   
+  margin: 0 auto ;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 30px;
+  color: #f5d0a5;
+  background-color: #525252;
+  padding: 10px 10px;
+  
+}
+
+.projects .VD {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects .VD .logo {
+  
+  height: 100px; width: auto;
+  margin-top: -100px;  
+  margin-bottom: 250px;
+  margin-left: -800px;
   cursor: pointer;
+  transition: transform ease 0.5s;
+}
+
+.projects .VD .logo:hover {
+  transform: scale(1.5);
+  transition: transform ease 0.5s;
+}
+
+.projects .VD .screenshot {
+
+  display: flex;
+  height: 600px; width: auto;
+  margin-top: -200px;
+
 }
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact h1 {
+       
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 40px;
+  text-align: center;
+  color: #f5d0a5;
+  background-color: #525252;
+  padding: 10px;
+  padding-left: 20px; padding-right: 20px;
+}
+
+.contact h2 {
+         
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 30px;
+  text-align: center;
+  color: #525252;
+  padding: 10px;
+  padding-left: 20px; padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.contact h2 a {
+  text-decoration: none;
+  color: #40c9a2;
+}
+
+
+.contact h2 a:hover {
+  text-decoration: underline
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #525252;
+  border-top: 4px solid #40c9a2;
+  height: 80px;
+  margin: -8px;
+}
+
+.credits {
+  color: #f5d0a5;
+  font-family: "Press Start 2P", monospace;
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+}
+
+.spacing {
+  display: flex;
+  flex-direction: row;
+  pointer-events: none;
+  user-select: none;
+}
+
+.home-button {
+  cursor: pointer;
+}
+
+.about-button {
+  cursor: pointer;
+}
+
+.projects-button {
+  cursor: pointer;
+}
+
+.contact-button {
   cursor: pointer;
 }
